@@ -1,0 +1,11 @@
+ISSUES:
+
+- rename only files whose names were changed, instead of moving everything
+  to a tempdir and back
+- if a mv fails, continue gracefully; don't leave the system half-baked
+
+
+FUTURE IDEAS:
+
+- allow passing sorting options like for ls
+- let the user reorder files inside vim (sth like old_name -> new_name)

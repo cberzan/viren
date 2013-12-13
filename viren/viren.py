@@ -115,12 +115,15 @@ def main():
             raise VirenError('editor failed with return code {}'.format(ret))
 
         # Get the edited list back from the temp file, and do the rename.
-        new_names = open(temp_path).readlines()
-        do_rename('.', new_names)
+        new_names = [line.strip() for line in open(temp_path).xreadlines()]
+        if new_names == old_names:
+            print "No change."
+        else:
+            do_rename('.', new_names)
+            print "Done renaming."
 
         # Clean up.
         os.remove(temp_path)
-        print "Done."
 
     except VirenError as err:
         print >>sys.stderr, "Something went wrong:"

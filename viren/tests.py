@@ -173,3 +173,5 @@ def test_dots():
 # TODO:
 # - unit tests for mk_temp_subdir
 # - unit tests for verify_rename_list instead of only end-to-end tests
+# - handles hidden files
+# - noop if file not edited
