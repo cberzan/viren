@@ -95,7 +95,10 @@ def do_rename(dir_path, new_names):
     os.rmdir(subdir_path)
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Run viren in the current directory.
+    """
     # Get sorted list of files in pwd.
     old_names = get_names('.')
 
@@ -124,3 +127,7 @@ if __name__ == "__main__":
         print >>sys.stderr, err.message
         print >>sys.stderr, "File list saved to {}".format(temp_path)
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
